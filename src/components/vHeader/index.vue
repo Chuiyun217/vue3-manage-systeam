@@ -1,23 +1,26 @@
 <script setup>
-import { ArrowDownBold, UserFilled, Fold, Expand } from '@element-plus/icons-vue'
-import { userStore } from '@/stores/userStore'
+import { ArrowDownBold, UserFilled, Fold, Expand, Select } from '@element-plus/icons-vue'
+import { useUserStore } from '@/stores/userStore'
 import { ref } from 'vue'
 
-const store = userStore()
+const store = useUserStore()
 
 const iconAcitve = ref(true)
 const list = ref([
   {
     item: '项目仓库',
-    url: 'github',
+    url: 'https://github.com/Chuiyun217/vue3-manage-systeam.git',
+    mode: 'new',
   },
   {
     item: '个人中心',
     url: '/user',
+    mode: 'location',
   },
   {
     item: '退出登录',
     url: '',
+    mode: 'none',
   },
 ])
 
@@ -25,8 +28,19 @@ const changeIcon = () => {
   iconAcitve.value = !iconAcitve.value
   console.log('[ iconAcitve ] => ', iconAcitve.value)
 }
-const changeSeleclt = (value) => {
-  console.log('[ test ] => ', value)
+const changeSeleclt = ({ url, mode }) => {
+  console.log('[ test ] => ', mode)
+  switch (mode) {
+    case 'new':
+      window.open(url)
+      break
+
+    case 'location':
+      break
+
+    case 'none':
+      break
+  }
 }
 </script>
 <template>
@@ -58,7 +72,7 @@ const changeSeleclt = (value) => {
               <el-dropdown-item
                 v-for="(item, index) in list"
                 :key="index"
-                @click="changeSeleclt(item.url)"
+                @click="changeSeleclt(item)"
               >
                 {{ item.item }}
               </el-dropdown-item>
@@ -69,74 +83,6 @@ const changeSeleclt = (value) => {
     </div>
   </div>
 </template>
-<style lang="scss">
-.header {
-  width: 100%;
-  height: 100px;
-  padding: 0 100px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: #000;
-
-  .left {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-size: 22px;
-
-    .img {
-      width: 50px;
-      height: 50px;
-    }
-
-    .icon {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    span {
-      margin: 0 20px 0 40px;
-    }
-  }
-
-  .right {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    align-items: center;
-
-    height: 50px;
-
-    color: #fff;
-
-    .avatar {
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .name {
-      margin: 0 5px 0 10px;
-    }
-    .icon {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-
-      :deep(.el-dropdown) {
-        outline: none !important;
-      }
-
-      :deep(.el-tooltip__trigger) {
-        outline: none !important;
-        border: none !important;
-      }
-    }
-  }
-}
+<style lang="scss" scoped>
+@use './index.scss';
 </style>

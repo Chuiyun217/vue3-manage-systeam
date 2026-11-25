@@ -1,0 +1,67 @@
+.header {
+  padding: 0 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #000;
+
+  .left {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 22px;
+
+    .img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    span {
+      margin: 0 20px 0 40px;
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+
+    height: 50px;
+
+    color: #fff;
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .name {
+      margin: 0 5px 0 10px;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      :deep(.el-dropdown) {
+        outline: none !important;
+      }
+
+      :deep(.el-tooltip__trigger) {
+        outline: none !important;
+        border: none !important;
+      }
+    }
+  }
+}

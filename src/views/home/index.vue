@@ -1,17 +1,7 @@
-<script setup>
-import { ref } from 'vue'
-
-import vHeader from '@/components/v-header/v-header.vue'
-
-let str = ref('123')
-let ojb = ref({
-  name: '1',
-  age: '12',
-})
-console.log('[ str ] => ', str.value)
-console.log('[ ojb ] => ', ojb.value.age)
-</script>
+<script setup></script>
 <template>
-  <v-header />
+  <div class="body">系统首页</div>
 </template>
-<style></style>
+<style lang="scss" scoped>
+@use './index.scss';
+</style>
