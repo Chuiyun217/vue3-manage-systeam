@@ -21,9 +21,6 @@
 - [x]  Dashboard
 - [x]  表格/表单
 - [x]  图表 📊
-- [x]  富文本/markdown 编辑器
-- [x]  图片拖拽/裁剪上传
-- [x]  权限管理
 - [x]  三级菜单
 
 
@@ -47,9 +44,9 @@ npm run dev
 
 ### 登录
 
-
+![image-20261127040441941](C:\Users\29162\AppData\Roaming\Typora\typora-user-images\image-20261127040441941.png)
 
 ### 首页
 
-
+![image-20261127040345859](C:\Users\29162\AppData\Roaming\Typora\typora-user-images\image-20261127040345859.png)
 

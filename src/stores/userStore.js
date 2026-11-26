@@ -5,7 +5,7 @@ export const useUserStore = defineStore(
   'user',
   () => {
     const userInfo = ref({
-      name: '测试',
+      name: '',
       avatar: '',
       remember: false,
     })

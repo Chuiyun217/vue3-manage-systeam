@@ -2,12 +2,14 @@
 <script setup>
 import vHeader from '@/components/vHeader/index.vue'
 import vMenus from '@/components/vMenu/index.vue'
+import { useUserStore } from '@/stores/userStore'
 import { ref } from 'vue'
 
 const isCollapse = ref(false)
 
+const userInfo = useUserStore()
+
 const changeIcon = (value) => {
-  console.log('[ test ] => ', value)
   isCollapse.value = !isCollapse.value
 }
 </script>

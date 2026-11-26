@@ -45,8 +45,6 @@ const validateForm = async () => {
     router.push('/home')
   } catch (err) {
     // 校验失败，err 是各字段的错误对象
-    console.log('[ err ] => ', err)
-    loginFormRef.value.resetFields()
   }
 }
 </script>

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import layout from '@/components/layout/index.vue'
+import { useUserStore } from '@/stores/userStore'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,7 @@ const router = createRouter({
       path: '/',
       component: layout, // 父级是 Layout
       redirect: '/home', // 默认重定向到首页
+      meta: { requiresAuth: true },
       children: [
         {
           path: 'home', // 注意：子路由不要加斜杠 /
@@ -77,6 +79,31 @@ const router = createRouter({
       component: () => import('@/views/forgotpsd/index.vue'),
     },
   ],
+})
+
+router.beforeEach((to, from) => {
+  const userStore = useUserStore()
+  const isLoggedIn = !!userStore.userInfo.name
+  const requiresAuth = to.meta.requiresAuth
+  console.log('[ requiresAuth ] => ', requiresAuth)
+
+  if (requiresAuth) {
+    if (isLoggedIn) {
+      return true
+    } else {
+      console.log('[ 未登录 ] => ')
+      return { path: '/login', query: { redirect: to.fullPath } }
+    }
+  } else {
+    // 不需要权限的页面
+    if (to.path === '/login' && isLoggedIn) {
+      // ✅ 已登录还去登录页，踢回首页
+      return '/'
+    } else {
+      // ✅ 放行
+      return true
+    }
+  }
 })
 
 export default router
