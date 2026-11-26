@@ -43,10 +43,8 @@ const menus = ref([
       background-color="#324157"
       text-color="#324157"
     >
-      <!-- 使用 template 包裹循环 -->
       <template v-for="(item, index) in menus" :key="index">
-        <!-- 情况 A：如果有 subitem 对象，渲染为带下拉的子菜单 -->
-        <el-sub-menu v-if="item.subitem" :index="item.url || `sub-${index}`">
+        <el-sub-menu v-if="item.subitem" :index="item.url">
           <template #title>
             <el-icon>
               <i :class="['iconfont', item.icon]"></i>
@@ -54,20 +52,17 @@ const menus = ref([
             <span>{{ item.item }}</span>
           </template>
 
-          <!-- 这里假设 subitem 里面是具体的子菜单列表 -->
-          <!-- 如果你的 subitem 结构不同，请根据实际结构调整这里 -->
           <el-menu-item
             v-for="(sub, subIndex) in item.subitem"
             :key="subIndex"
             :index="sub.url"
-            style="color: #fff"
+            style="color: #fff; border: none"
           >
             <span>{{ sub.item }}</span>
           </el-menu-item>
         </el-sub-menu>
 
-        <!-- 情况 B：如果没有 subitem，渲染为普通菜单项 -->
-        <el-menu-item v-else :index="item.url || `item-${index}`">
+        <el-menu-item v-else :index="item.url">
           <el-icon>
             <i :class="['iconfont', item.icon]"></i>
           </el-icon>

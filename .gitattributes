@@ -8,6 +8,7 @@
 *.json  text eol=lf
 *.md    text eol=lf
 *.vue   text eol=lf
+* text=auto eol=lf
 
 # 让 gitattributes 自己也是 LF
 .gitattributes text eol=lf

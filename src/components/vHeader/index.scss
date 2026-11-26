@@ -53,15 +53,6 @@
       display: flex;
       align-items: center;
       cursor: pointer;
-
-      :deep(.el-dropdown) {
-        outline: none !important;
-      }
-
-      :deep(.el-tooltip__trigger) {
-        outline: none !important;
-        border: none !important;
-      }
     }
   }
 }
