@@ -5,7 +5,10 @@ import { ref } from 'vue'
 
 const store = useUserStore()
 
-const iconAcitve = ref(true)
+const props = defineProps({
+  iconState: Boolean,
+})
+
 const list = ref([
   {
     item: '项目仓库',
@@ -25,8 +28,7 @@ const list = ref([
 ])
 
 const changeIcon = () => {
-  iconAcitve.value = !iconAcitve.value
-  console.log('[ iconAcitve ] => ', iconAcitve.value)
+  emit('changeIcon', props.iconState)
 }
 const changeSeleclt = ({ url, mode }) => {
   console.log('[ test ] => ', mode)
@@ -42,6 +44,8 @@ const changeSeleclt = ({ url, mode }) => {
       break
   }
 }
+
+const emit = defineEmits(['changeIcon'])
 </script>
 <template>
   <div class="header">
@@ -51,15 +55,15 @@ const changeSeleclt = ({ url, mode }) => {
       </div>
       <span>后台管理系统</span>
       <div class="icon" @click="changeIcon">
-        <el-icon v-show="iconAcitve === true" color="#fff" :size="26"><Fold /></el-icon>
-        <el-icon v-show="iconAcitve === false" color="#fff" :size="26"><Expand /></el-icon>
+        <el-icon v-show="props.iconState === true" color="#fff" :size="26"><Fold /></el-icon>
+        <el-icon v-show="props.iconState === false" color="#fff" :size="26"><Expand /></el-icon>
       </div>
     </div>
     <div class="right">
       <div class="avatar">
         <el-avatar :icon="UserFilled" :src="store.userInfo.avatar || `“”`" />
       </div>
-      <div class="name">{{ store.userInfo.name || '昵称' }}</div>
+      <div class="name">{{ store.userInfo.name || '请先登录' }}</div>
 
       <div class="icon">
         <el-dropdown trigger="click">

@@ -15,6 +15,21 @@ const router = createRouter({
           component: () => import('@/views/home/index.vue'),
         },
         {
+          path: 'user',
+          name: 'User',
+          component: () => import('@/views/systeam/user/index.vue'),
+        },
+        {
+          path: 'role',
+          name: 'Role',
+          component: () => import('@/views/systeam/role/index.vue'),
+        },
+        {
+          path: 'page',
+          name: 'Page',
+          component: () => import('@/views/systeam/page/index.vue'),
+        },
+        {
           path: 'eachs',
           name: 'Eachs',
           component: () => import('@/views/chart/index.vue'),

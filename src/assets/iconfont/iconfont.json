@@ -1,0 +1,44 @@
+{
+  "id": "5256484",
+  "name": "vue3后台管理系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1137788",
+      "name": "系统",
+      "font_class": "xitong",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "1546597",
+      "name": "图表",
+      "font_class": "tubiao",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "12975006",
+      "name": "商品2",
+      "font_class": "shangpin",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "23263620",
+      "name": "护盾",
+      "font_class": "hudun",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "24185835",
+      "name": "首页",
+      "font_class": "icon_857",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    }
+  ]
+}

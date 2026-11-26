@@ -1,6 +1,8 @@
 <script setup></script>
 <template>
-  <div class="body">系统首页</div>
+  <div class="body">
+    <span class="icon-shangpin iconfont"></span>
+  </div>
 </template>
 <style lang="scss" scoped>
 @use './index.scss';

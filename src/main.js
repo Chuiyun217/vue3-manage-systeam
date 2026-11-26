@@ -6,8 +6,12 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// elementPlus引入
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+
+// iconfont引入
+import '@/assets/iconfont/iconfont.css'
 
 const app = createApp(App)
 

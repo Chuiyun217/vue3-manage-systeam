@@ -1,0 +1,13 @@
+# 让 Git 自动处理文本文件的换行符
+* text=auto
+
+# 明确指定源码文件统一用 LF（跨平台一致）
+*.js    text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.vue   text eol=lf
+
+# 让 gitattributes 自己也是 LF
+.gitattributes text eol=lf
