@@ -61,6 +61,11 @@ const router = createRouter({
           name: 'DigitalProduct',
           component: () => import('@/views/shops/digitalProduct/index.vue'),
         },
+        {
+          path: 'user',
+          name: 'User',
+          component: () => import('@/views/user/index.vue'),
+        },
       ],
     },
     {

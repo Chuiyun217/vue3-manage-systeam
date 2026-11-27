@@ -1,7 +1,8 @@
 <script setup>
-import { ArrowDownBold, UserFilled, Fold, Expand, Select } from '@element-plus/icons-vue'
+import { ArrowDownBold, UserFilled, Fold, Expand } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores/userStore'
 import { ref } from 'vue'
+import router from '@/router'
 
 const store = useUserStore()
 
@@ -38,6 +39,7 @@ const changeSeleclt = ({ url, mode }) => {
       break
 
     case 'location':
+      router.push(url)
       break
 
     case 'none':

@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "517498",
+      "name": "phone",
+      "font_class": "custom-phone",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "933713",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "4936984",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "8474261",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
       "icon_id": "2076192",
       "name": " 消息",
       "font_class": "xiaoxi",

@@ -8,6 +8,7 @@ export const useUserStore = defineStore(
       name: '',
       avatar: '',
       remember: false,
+      eMail: '',
     })
 
     const update = (obj) => {
